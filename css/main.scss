@@ -78,6 +78,7 @@ header {
                 left: 0;
                 top: 91px;
                 background-color: rgba(0, 0, 0, 0.8);
+                z-index: 2;
               }
               &::after {
                 content: "";
@@ -91,6 +92,7 @@ header {
                 position: absolute;
                 width: 500px;
                 display: flex;
+                z-index: 2;
                 li {
                   a {
                     position: relative;
@@ -152,7 +154,7 @@ header {
       width: 100%;
       height: 750px;
       background-color: #333;
-      z-index: 1;
+      z-index: 3;
     }
   }
   @at-root .left-main-menu ul.menu li.item:nth-child(1) > .item__contents > div.inner > h1 {
@@ -160,12 +162,12 @@ header {
     font-weight: 500;
     color: #fff;
     padding: 40px 0;
-    z-index: 2;
+    z-index: 3;
   }
   @at-root .left-main-menu ul.menu li.item:nth-child(1) > .item__contents > div.inner > div {
     position: absolute;
     top: 95px;
-    z-index: 2;
+    z-index: 3;
   }
   @at-root .left-main-menu ul.menu li.item:nth-child(1) > .item__contents > div.inner > div > ul {
     display: flex;
@@ -273,6 +275,7 @@ header {
             position: absolute;
             width: 500px;
             display: flex;
+            z-index: 2;
           }
           &::before {
             content: "";
@@ -282,6 +285,7 @@ header {
             left: 0;
             top: 91px;
             background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2;
           }
           &::after {
             content: "";
@@ -301,6 +305,7 @@ header {
               position: absolute;
               width: 500px;
               display: flex;
+              z-index: 2;
             }
             &::before {
               content: "";
@@ -310,6 +315,7 @@ header {
               left: 0;
               top: 91px;
               background-color: rgba(0, 0, 0, 0.9);
+              z-index: 2;
             }
             &::after {
               content: "";
@@ -388,7 +394,6 @@ header {
   background-size: cover;
   height: 830px;
   position: relative;
-  z-index: -1;
   &::after {
     content: "";
     position: absolute;
@@ -397,10 +402,209 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(17, 17, 17, 0.97);
-    z-index: -1;
+  }
+  .inner > h2:nth-child(1) {
+    position: absolute;
+    width: 80px;
+    top: 75px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #fff;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: #444;
+    }
+  }
+  .inner > h2 {
+    position: absolute;
+    right: 0;
+    top: 90px;
+    z-index: 1;
+  }
+  .inner > h2 a {
+    color: #888;
+    font-size: 16px;
+    &:hover {
+      text-decoration: underline;
+    }
+    &::after {
+      position: absolute;
+      top: -15px;
+      content: "+";
+      font-size: 30px;
+      padding-left: 5px;
+    }
+    
+  }
+  .inner .movies {
+    display: flex;
+    position: absolute;
+    top: 125px;
+    z-index: 1;
+    [class*=like] {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 35px;
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 1px solid #888;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+      span {
+        color: #fff;
+        font-weight: 500;
+        &:nth-child(1) {
+          font-size: 20px;
+        }
+        &:nth-child(2) {
+          font-size: 14px;
+          padding-left: 8px;
+        }
+      }
+    }
+    [class*=reserve] {
+      width: calc(250px - 90px);
+      height: 35px;
+      background-color: rgb(29, 145, 165);
+      border-radius: 5px;
+      border: 0px;
+      margin-left: 10px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    [class=bottom__btn] {
+      display: flex;
+      width: 250px;
+      margin-top: 20px;
+    }
+    [class=poster] {
+      width: 250px;
+      height: 350px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      border-radius: 5px;
+    }
+    .movie1 {
+      .poster { 
+        background-image: url("../image/hostage.jpg")     
+      }
+      & ~ [class*=movie] {
+        margin-left: 40px;
+      }    
+    }
+    .movie2 {
+      .poster {
+        background-image: url("../image/SINKHOLE.jpg");
+      }  
+    }
+    .movie3 {
+      .poster {
+        background-image: url("../image/Mogadishu.jpg");
+      }
+    }
+    .movie4 {
+      .poster {
+        background-image: url("../image/blackwidow.jpg");
+      }
+    }
+  }
+  .quickmenus {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    top: 570px;
+    width: 1120px;
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.5);
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        padding-left: 200px;   
+        a {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        &:nth-child(2) {
+          position: relative;
+          ::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            top: -3px;
+            left: 160px;
+            background-image: url('../image/ico-schedule-main.png');
+            background-repeat: no-repeat;
+          }
+          ::before {
+            content: "";
+            position: absolute;
+            left: 50px;
+            width: 1px;
+            height: 25px;
+            background-color: #777;
+          }
+        }
+        &:nth-child(3) {
+          position: relative;
+          ::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            top: -3px;
+            left: 160px;
+            background-image: url('../image/ico-boxoffice-main.png');
+            background-repeat: no-repeat;
+          }
+          ::before {
+            content: "";
+            position: absolute;
+            left: 70px;
+            width: 1px;
+            height: 25px;
+            background-color: #777;
+          }
+        }
+        &:nth-child(4) {
+          position: relative;
+          ::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            top: -3px;
+            left: 160px;
+            background-image: url('../image/ico-quick-reserve-main.png');
+            background-repeat: no-repeat;
+          }
+          ::before {
+            content: "";
+            position: absolute;
+            left: 90px;
+            width: 1px;
+            height: 25px;
+            background-color: #777;
+          }
+        }   
+      }
+    }
   }
 }
-
 
 .benefit {
   height: 830px;

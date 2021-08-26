@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./..\\image\\hostage_bg.jpg":[["hostage_bg.9cf603c7.jpg","image/hostage_bg.jpg"],"image/hostage_bg.jpg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./..\\image\\hostage_bg.jpg":[["hostage_bg.9cf603c7.jpg","image/hostage_bg.jpg"],"image/hostage_bg.jpg"],"./..\\image\\hostage.jpg":[["hostage.5dc2ea28.jpg","image/hostage.jpg"],"image/hostage.jpg"],"./..\\image\\SINKHOLE.jpg":[["SINKHOLE.3dadbbff.jpg","image/SINKHOLE.jpg"],"image/SINKHOLE.jpg"],"./..\\image\\Mogadishu.jpg":[["Mogadishu.f605fa16.jpg","image/Mogadishu.jpg"],"image/Mogadishu.jpg"],"./..\\image\\blackwidow.jpg":[["blackwidow.3ba8d3e7.jpg","image/blackwidow.jpg"],"image/blackwidow.jpg"],"./..\\image\\ico-schedule-main.png":[["ico-schedule-main.e8e2619f.png","image/ico-schedule-main.png"],"image/ico-schedule-main.png"],"./..\\image\\ico-boxoffice-main.png":[["ico-boxoffice-main.d46421c5.png","image/ico-boxoffice-main.png"],"image/ico-boxoffice-main.png"],"./..\\image\\ico-quick-reserve-main.png":[["ico-quick-reserve-main.f47193c8.png","image/ico-quick-reserve-main.png"],"image/ico-quick-reserve-main.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "10352" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8712" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
