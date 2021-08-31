@@ -31,6 +31,7 @@ header {
     display: flex;
     
   }
+  // 좌측 서브 메뉴
   .left-sub-menu {
     ul.menu {
       display: flex;
@@ -49,7 +50,7 @@ header {
       }
     }
   }
-
+  // 좌측 메인 메뉴
   .left-main-menu {
     position: absolute;
     top: 0;
@@ -223,7 +224,7 @@ header {
     text-decoration: underline;
   }
 
-
+  // 로고
   .logo {
     position: absolute;
     width: 140px;
@@ -235,6 +236,7 @@ header {
     margin: auto;
   }
 
+  // 우측 서브 메뉴
   .right-sub-menu {
     position: absolute;
     right: 0;
@@ -255,6 +257,8 @@ header {
       }
     }
   }
+
+  // 우측 메인 메뉴
   .right-main-menu {
     position: absolute;
     right: 0;
@@ -388,20 +392,22 @@ header {
   margin: auto;
 }
 
+// 박스오피스
 .boxoffice {
-  background-image: url('../image/hostage_bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 830px;
-  position: relative;
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(17, 17, 17, 0.97);
+  width: 100%;
+  background-color: #000;
+  .inner {
+    height: 830px;
+    background-image: url('../image/hostage_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.87);
+    }
   }
   .inner > h2:nth-child(1) {
     position: absolute;
@@ -424,7 +430,7 @@ header {
   }
   .inner > h2 {
     position: absolute;
-    right: 0;
+    right: 40px;
     top: 90px;
     z-index: 1;
   }
@@ -472,7 +478,7 @@ header {
       }
     }
     [class*=reserve] {
-      width: calc(250px - 90px);
+      width: calc(245px - 90px);
       height: 35px;
       background-color: rgb(29, 145, 165);
       border-radius: 5px;
@@ -488,51 +494,151 @@ header {
       width: 250px;
       margin-top: 20px;
     }
-    [class=poster] {
-      width: 250px;
+    [class=img] {
+      position: relative;
+      width: 244px;
       height: 350px;
-      background-repeat: no-repeat;
-      background-size: contain;
       border-radius: 5px;
+
     }
-    .movie1 {
-      .poster { 
-        background-image: url("../image/hostage.jpg")     
+    [class*=movie] {
+
+      margin-left: 30px;
+      &:nth-child(1) {
+        &::after {
+          content: "1";
+          position: relative;
+          top: -405px;
+          left: 15px;
+          color: #fff;
+          font-size: 32px;
+          text-shadow: 2px 2px #000;
+          font-style: italic;
+        }
       }
-      & ~ [class*=movie] {
-        margin-left: 40px;
-      }    
-    }
-    .movie2 {
-      .poster {
-        background-image: url("../image/SINKHOLE.jpg");
-      }  
-    }
-    .movie3 {
-      .poster {
-        background-image: url("../image/Mogadishu.jpg");
+      &:nth-child(2) {
+        &::after {
+          content: "2";
+          position: relative;
+          top: -405px;
+          left: 15px;
+          color: #fff;
+          font-size: 32px;
+          text-shadow: 2px 2px #000;
+          font-style: italic;
+        }
+      }
+      &:nth-child(3) {
+        &::after {
+          content: "3";
+          position: relative;
+          top: -405px;
+          left: 15px;
+          color: #fff;
+          font-size: 32px;
+          text-shadow: 2px 2px #000;
+          font-style: italic;
+        }
+      }
+      &:nth-child(4) {
+        &::after {
+          content: "4";
+          position: relative;
+          top: -405px;
+          left: 15px;
+          color: #fff;
+          font-size: 32px;
+          text-shadow: 2px 2px #000;
+          font-style: italic;
+        }
+      }
+      &:first-child {
+        margin-left: 0;
       }
     }
-    .movie4 {
-      .poster {
-        background-image: url("../image/blackwidow.jpg");
+    [class=poster] {
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        &::after {
+          content: "";
+          position: absolute;
+          width: 244px;
+          height: 350px;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 1;
+        }
+      }
+    }
+    [class=text] {
+      position: absolute;
+      top: 0;
+      padding: 10px;
+      color: #fff;
+      font-weight: 500;
+      word-break: keep-all;
+      z-index: 2;
+      opacity: 0;
+    }
+  }
+  [class=bar] {
+    width: 80%;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+  }
+  [class=score] {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    bottom: 30px ;
+    transform: translateX(-50%);
+    font-weight: 500;
+    opacity: 0;
+    z-index: 2;
+    span {
+      &:nth-child(2) {
+        font-size: 22px;
+        color: rgb(0, 121, 130);
+        padding-left: 10px;
       }
     }
   }
+  [class=poster]:hover {
+    [class=text] {
+      transition: all 0.8s;
+      opacity: 1;
+    }
+    [class=bar] {
+      transition: all 0.8s;
+      opacity: 1;
+    }
+    [class=score] {
+      transition: all 0.8s;
+      opacity: 1;
+    }
+  }
+
   .quickmenus {
     display: flex;
     align-items: center;
     z-index: 1;
     position: absolute;
     top: 570px;
-    width: 1120px;
+    width: 1100px;
     height: 75px;
     background-color: rgba(0, 0, 0, 0.5);
     ul {
       display: flex;
       justify-content: center;
       li {
-        padding-left: 200px;   
+        padding-left: 180px;   
         a {
           &:hover {
             text-decoration: underline;
@@ -546,14 +652,14 @@ header {
             width: 100%;
             height: 30px;
             top: -3px;
-            left: 160px;
+            left: 145px;
             background-image: url('../image/ico-schedule-main.png');
             background-repeat: no-repeat;
           }
           ::before {
             content: "";
             position: absolute;
-            left: 50px;
+            left: 60px;
             width: 1px;
             height: 25px;
             background-color: #777;
@@ -561,35 +667,15 @@ header {
         }
         &:nth-child(3) {
           position: relative;
+          padding-left: 220px;
           ::after {
             content: "";
             position: absolute;
             width: 100%;
             height: 30px;
             top: -3px;
-            left: 160px;
+            left: 180px;
             background-image: url('../image/ico-boxoffice-main.png');
-            background-repeat: no-repeat;
-          }
-          ::before {
-            content: "";
-            position: absolute;
-            left: 70px;
-            width: 1px;
-            height: 25px;
-            background-color: #777;
-          }
-        }
-        &:nth-child(4) {
-          position: relative;
-          ::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 30px;
-            top: -3px;
-            left: 160px;
-            background-image: url('../image/ico-quick-reserve-main.png');
             background-repeat: no-repeat;
           }
           ::before {
@@ -600,7 +686,53 @@ header {
             height: 25px;
             background-color: #777;
           }
+        }
+        &:nth-child(4) {
+          position: relative;
+          padding-left: 205px;
+          ::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: -3px;
+            left: 160px;
+            background-image: url('../image/ico-quick-reserve-main.png');
+            background-repeat: no-repeat;
+          }
+          ::before {
+            content: "";
+            position: absolute;
+            left: 80px;
+            width: 1px;
+            height: 25px;
+            background-color: #777;
+          }
         }   
+      }
+    }
+  }
+  .mouse__animation {
+    position: relative;
+    top: -100px;
+    left: 50%;
+    width: 0;
+    height: 0px;
+    .material-icons {
+      display: inline-block;
+      color: #fff;
+      animation-duration: 1s;
+      animation-name: slidein;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    @keyframes slidein {
+      from {
+        margin-top: 15px;
+      }
+
+      to {
+        margin-top: 0px;
       }
     }
   }

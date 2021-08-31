@@ -397,20 +397,21 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
 }
 
 .boxoffice {
+  width: 100%;
+  background-color: #000;
+}
+.boxoffice .inner {
+  height: 830px;
   background-image: url("/hostage_bg.9cf603c7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 830px;
-  position: relative;
 }
-.boxoffice::after {
+.boxoffice .inner::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(17, 17, 17, 0.97);
+  background-color: rgba(0, 0, 0, 0.87);
 }
 .boxoffice .inner > h2:nth-child(1) {
   position: absolute;
@@ -433,7 +434,7 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
 }
 .boxoffice .inner > h2 {
   position: absolute;
-  right: 0;
+  right: 40px;
   top: 90px;
   z-index: 1;
 }
@@ -481,7 +482,7 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
   padding-left: 8px;
 }
 .boxoffice .inner .movies [class*=reserve] {
-  width: calc(250px - 90px);
+  width: calc(245px - 90px);
   height: 35px;
   background-color: #1d91a5;
   border-radius: 5px;
@@ -497,27 +498,118 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
   width: 250px;
   margin-top: 20px;
 }
-.boxoffice .inner .movies [class=poster] {
-  width: 250px;
+.boxoffice .inner .movies [class=img] {
+  position: relative;
+  width: 244px;
   height: 350px;
-  background-repeat: no-repeat;
-  background-size: contain;
   border-radius: 5px;
 }
-.boxoffice .inner .movies .movie1 .poster {
-  background-image: url("/hostage.5dc2ea28.jpg");
+.boxoffice .inner .movies [class*=movie] {
+  margin-left: 30px;
 }
-.boxoffice .inner .movies .movie1 ~ [class*=movie] {
-  margin-left: 40px;
+.boxoffice .inner .movies [class*=movie]:nth-child(1)::after {
+  content: "1";
+  position: relative;
+  top: -405px;
+  left: 15px;
+  color: #fff;
+  font-size: 32px;
+  text-shadow: 2px 2px #000;
+  font-style: italic;
 }
-.boxoffice .inner .movies .movie2 .poster {
-  background-image: url("/SINKHOLE.3dadbbff.jpg");
+.boxoffice .inner .movies [class*=movie]:nth-child(2)::after {
+  content: "2";
+  position: relative;
+  top: -405px;
+  left: 15px;
+  color: #fff;
+  font-size: 32px;
+  text-shadow: 2px 2px #000;
+  font-style: italic;
 }
-.boxoffice .inner .movies .movie3 .poster {
-  background-image: url("/Mogadishu.f605fa16.jpg");
+.boxoffice .inner .movies [class*=movie]:nth-child(3)::after {
+  content: "3";
+  position: relative;
+  top: -405px;
+  left: 15px;
+  color: #fff;
+  font-size: 32px;
+  text-shadow: 2px 2px #000;
+  font-style: italic;
 }
-.boxoffice .inner .movies .movie4 .poster {
-  background-image: url("/blackwidow.3ba8d3e7.jpg");
+.boxoffice .inner .movies [class*=movie]:nth-child(4)::after {
+  content: "4";
+  position: relative;
+  top: -405px;
+  left: 15px;
+  color: #fff;
+  font-size: 32px;
+  text-shadow: 2px 2px #000;
+  font-style: italic;
+}
+.boxoffice .inner .movies [class*=movie]:first-child {
+  margin-left: 0;
+}
+.boxoffice .inner .movies [class=poster] {
+  position: relative;
+  cursor: pointer;
+}
+.boxoffice .inner .movies [class=poster]:hover::after {
+  content: "";
+  position: absolute;
+  width: 244px;
+  height: 350px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+.boxoffice .inner .movies [class=text] {
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  color: #fff;
+  font-weight: 500;
+  word-break: keep-all;
+  z-index: 2;
+  opacity: 0;
+}
+.boxoffice [class=bar] {
+  width: 80%;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  opacity: 0;
+}
+.boxoffice [class=score] {
+  position: absolute;
+  color: #fff;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-weight: 500;
+  opacity: 0;
+  z-index: 2;
+}
+.boxoffice [class=score] span:nth-child(2) {
+  font-size: 22px;
+  color: #007982;
+  padding-left: 10px;
+}
+.boxoffice [class=poster]:hover [class=text] {
+  transition: all 0.8s;
+  opacity: 1;
+}
+.boxoffice [class=poster]:hover [class=bar] {
+  transition: all 0.8s;
+  opacity: 1;
+}
+.boxoffice [class=poster]:hover [class=score] {
+  transition: all 0.8s;
+  opacity: 1;
 }
 .boxoffice .quickmenus {
   display: flex;
@@ -525,7 +617,7 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
   z-index: 1;
   position: absolute;
   top: 570px;
-  width: 1120px;
+  width: 1100px;
   height: 75px;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -534,7 +626,7 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
   justify-content: center;
 }
 .boxoffice .quickmenus ul li {
-  padding-left: 200px;
+  padding-left: 180px;
 }
 .boxoffice .quickmenus ul li a:hover {
   text-decoration: underline;
@@ -548,20 +640,21 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
   width: 100%;
   height: 30px;
   top: -3px;
-  left: 160px;
+  left: 145px;
   background-image: url("/ico-schedule-main.e8e2619f.png");
   background-repeat: no-repeat;
 }
 .boxoffice .quickmenus ul li:nth-child(2) ::before {
   content: "";
   position: absolute;
-  left: 50px;
+  left: 60px;
   width: 1px;
   height: 25px;
   background-color: #777;
 }
 .boxoffice .quickmenus ul li:nth-child(3) {
   position: relative;
+  padding-left: 220px;
 }
 .boxoffice .quickmenus ul li:nth-child(3) ::after {
   content: "";
@@ -569,25 +662,26 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
   width: 100%;
   height: 30px;
   top: -3px;
-  left: 160px;
+  left: 180px;
   background-image: url("/ico-boxoffice-main.d46421c5.png");
   background-repeat: no-repeat;
 }
 .boxoffice .quickmenus ul li:nth-child(3) ::before {
   content: "";
   position: absolute;
-  left: 70px;
+  left: 90px;
   width: 1px;
   height: 25px;
   background-color: #777;
 }
 .boxoffice .quickmenus ul li:nth-child(4) {
   position: relative;
+  padding-left: 205px;
 }
 .boxoffice .quickmenus ul li:nth-child(4) ::after {
   content: "";
   position: absolute;
-  width: 100%;
+  width: 30px;
   height: 30px;
   top: -3px;
   left: 160px;
@@ -597,10 +691,33 @@ header .right-main-menu ul.menu > li.item:hover .item__contents {
 .boxoffice .quickmenus ul li:nth-child(4) ::before {
   content: "";
   position: absolute;
-  left: 90px;
+  left: 80px;
   width: 1px;
   height: 25px;
   background-color: #777;
+}
+.boxoffice .mouse__animation {
+  position: relative;
+  top: -100px;
+  left: 50%;
+  width: 0;
+  height: 0px;
+}
+.boxoffice .mouse__animation .material-icons {
+  display: inline-block;
+  color: #fff;
+  animation-duration: 1s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes slidein {
+  from {
+    margin-top: 15px;
+  }
+  to {
+    margin-top: 0px;
+  }
 }
 
 .benefit {

@@ -145,6 +145,31 @@ function toggleReset() {
     sitemapEl.style.display = 'block';
   }
 }
+
+var likeBtn1 = document.querySelector('.like_1');
+var likeBtn2 = document.querySelector('.like_2');
+var likeBtn3 = document.querySelector('.like_3');
+var likeBtn4 = document.querySelector('.like_4');
+likeBtn1.addEventListener("click", function () {
+  var likeScore1 = document.querySelector('.result1');
+  var number1 = parseInt(likeScore1.innerText);
+  likeScore1.innerText = String(++number1);
+});
+likeBtn2.addEventListener("click", function () {
+  var likeScore2 = document.querySelector('.result2');
+  var number2 = parseInt(likeScore2.innerText);
+  likeScore2.innerText = String(++number2);
+});
+likeBtn3.addEventListener("click", function () {
+  var likeScore3 = document.querySelector('.result3');
+  var number3 = parseInt(likeScore3.innerText);
+  likeScore3.innerText = String(++number3);
+});
+likeBtn4.addEventListener("click", function () {
+  var likeScore4 = document.querySelector('.result4');
+  var number4 = parseInt(likeScore4.innerText);
+  likeScore4.innerText = String(++number4);
+});
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -173,7 +198,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "8712" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2637" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
